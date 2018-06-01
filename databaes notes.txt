@@ -1,0 +1,138 @@
+Build
+Library
+Modules 
+Project
+-------------------------
+
+express***
+database***:
+----------------
+
+-data structure
+-constraints
+-where
+-order
+-group by
+-having
+-functions (aggregiate functin) : count, sum, min, max, avg, stddev...
+-function :
+		scaler 	: single value reutn  : left(), right() , len(), replace(), upper(), lower
+		aggregiate : to summarize data and then return 
+		tabular function  : multiple value return :
+					custom function
+						@table : 1,aa
+
+						
+
+
+	selct *, upper(name) from tablename 
+
+	selct  sum(id) as nn from tablename 
+
+		selct  id, sum(id) as nn from tablename 
+		group by id
+	
+id name mgrname
+1  a      aa		A
+2  sss    aa		SSS
+3  dfdfd  b
+4   dd    c
+-union 
+-join 
+-suquery 
+	select * from (
+			select * from a 
+			order by sal desc
+			limit 10
+			) t
+	order by sal asc
+	limit 1
+
+
+id name sal
+1   sss  333
+2   shgs  222
+4   shsgs   11
+5   jhsgs   300
+
+
+
+
+
+-data structure
+========================
+numeric:
+		tinyint		: 1 byte 
+		smallint
+		int
+		bigint 
+
+		float
+		double
+		numeric(5,2)    = 123.45
+
+alpha numeric:
+		char		: fix size  char(2) : 'a'		: m,f , y/n  
+		nchar
+		varchar		: dynamic size varchar(20) = 'abc'
+		nvarchar
+		text		: <ID>11</ID> 
+		ntext
+	
+		**n: unicode (multi language), this will double size compare to non unicode 
+		varchar : 'a'
+		nvarcahr:'a'
+
+
+		A = 65  
+
+			100001
+
+
+DATE :
+		date 		: yyyy-mm-dd
+		datetime	: yyyy-mm-dd hh:mm
+		smalldatetime	: yyyy-mm-dd hh:mm:ss:ms
+		datetimelocal	: 
+
+
+bool/bit	
+
+
+other type:
+		image
+		varbinary : hexdecmal :
+					
+-constraints
+========================
+primary key
+			-not null
+			-unique
+			-single on a table
+			-physically sorted 
+foreign			
+			-
+unique		
+		-unique
+		-single null 
+
+not null
+null
+default 
+check 		in ('m','f')
+		
+
+
+id name mgrname
+1  a      aa
+2  sss    aa
+3  dfdfd  b
+4   dd    c
+
+
+select mgrname, count(mgrname)
+from a 
+where country ='india'
+group by mgrname
+having count(mgrname) >=2
+	
